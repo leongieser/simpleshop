@@ -40,7 +40,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         </div>
       </div>
     </div>
-    <button className="self-center w-5/6 px-4 py-2 mt-auto mb-5 font-semibold text-white rounded-md bg-slate-800">
+    <button className="self-center w-5/6 px-4 py-2 mt-auto mb-5 font-semibold text-white rounded-md bg-zinc-800">
       Add to Cart
     </button>
   </div>

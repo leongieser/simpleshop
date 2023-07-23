@@ -12,7 +12,7 @@ export default async function Products() {
   console.log(data);
   return (
     <section
-      className="grid w-full gap-4 overflow-y-auto mt-9 sm:grid-cols-2 md:gap-4 lg:grid-cols-2 xl:grid-cols-4 xl:gap-8"
+      className="grid w-full gap-4 mt-9 sm:grid-cols-2 md:gap-4 lg:grid-cols-2 xl:grid-cols-4 xl:gap-8"
       aria-label="Items Section"
     >
       {data.products.map((product: any) => (
