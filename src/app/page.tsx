@@ -17,9 +17,10 @@ export default function Home() {
           width={500}
           height={500}
           alt="Simpleshop logo"
+          priority={true}
         />
       </div>
-      <Link href={"/product"}>
+      <Link href={"/products"}>
         <button className="px-4 py-2 font-semibold transition duration-300 bg-transparent rounded mt-7 outline outline-zinc-500 outline-offset-2 text-zinc-700 hover:bg-zinc-500 hover:text-white hover:border-transparent">
           Explore Now
         </button>

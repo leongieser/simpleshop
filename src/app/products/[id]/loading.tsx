@@ -1,6 +1,7 @@
 "use client";
 
 export default function Loading() {
+
   return (
     <div className="flex flex-col items-center min-h-screen mt-10 animate-pulse">
       <div className="flex flex-col items-center justify-center max-w-2xl ">

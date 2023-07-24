@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { Product } from "../../types";
+import Products from '../products/page';
 
 interface State {
   cart: Product[];
