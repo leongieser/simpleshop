@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="p-4 text-5xl font-bold md:text-md lg:xl:2xl:text-9xl">
             Simple<span className="text-zinc-300">shop</span>
           </h1>
-          <h4 className="text-3xl font-light text-right text-zinc-600">wow so minimalistic</h4>
+          <h4 className="text-2xl font-light text-right text-zinc-600">wow so minimalistic</h4>
         </div>
         <Image
           src="/simple_logo.png"

@@ -2,7 +2,7 @@ import { Product } from "@/types";
 import Image from "next/image";
 import Link from 'next/link';
 
-const ProductCard = ({ product }: { product: Product }) => {
+export const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div className="flex flex-col overflow-hidden bg-white border rounded-lg shadow-lg border-zinc-200">
     <Link
@@ -40,11 +40,11 @@ const ProductCard = ({ product }: { product: Product }) => {
         </div>
       </div>
     </div>
-    <button className="self-center w-5/6 px-4 py-2 mt-auto mb-5 font-semibold text-white rounded-md bg-zinc-800">
+    <button className="self-center w-5/6 px-4 py-2 mt-auto mb-4 font-semibold text-white rounded-md bg-zinc-800">
       Add to Cart
     </button>
   </div>
   );
 };
 
-export default ProductCard;
+

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ProductCard from "@/components/ProductCard";
+import { ProductCard } from "@/components/ProductCard";
 
 async function getProducts() {
   const res = await fetch("https://dummyjson.com/products?limit=0", { next: { revalidate: 10 } });
