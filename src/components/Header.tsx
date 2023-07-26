@@ -1,13 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import CartButton from "./CartButton";
+import CartDrawer from "./CartDrawer";
+import ScrollToTopButton from "./ScrollToTopBtn";
+
+import { useCartStore } from "@/app/(store)/cart";
 
 export default function Header() {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const handleCartClick = () => setIsCartOpen(!isCartOpen);
+  const [bodyScrollPosition, setBodyScrollPosition] = useState(0);
+  const { isDrawerOpen } = useCartStore();
+
+  useEffect(() => {
+    if (isDrawerOpen) {
+      setBodyScrollPosition(window.scrollY);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      window.scrollTo(0, bodyScrollPosition);
+    }
+  }, [isDrawerOpen]);
 
   return (
     <>
@@ -18,28 +32,11 @@ export default function Header() {
               Simple<span className="text-zinc-300">shop</span>
             </Link>
           </div>
-          <CartButton handleCartClick={handleCartClick} />
+          <CartButton />
         </nav>
       </header>
-
-      <div
-        className={`fixed z-50 top-0 right-0 h-full w-3/4 sm:w-2/4 w-lg:w-2/3 xl:w-1/5 bg-white shadow-lg transform ${
-          isCartOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform ease-in-out`}
-      >
-        <div className="flex justify-between p-7">
-          <h2 className="text-lg font-bold">Simple<span className='text-zinc-600'>cart</span></h2>
-          <button onClick={handleCartClick}>
-            <Image className="h-auto"
-              width={25}
-              height={50}
-              src={"/x-symbol.svg"}
-              alt={"X symbol to close cart drawer"}
-            ></Image>
-          </button>
-          {/* TODO Cart */}
-        </div>
-      </div>
+      <CartDrawer />
+      <ScrollToTopButton />
     </>
   );
 }

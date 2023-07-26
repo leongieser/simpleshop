@@ -1,5 +1,5 @@
 "use client";
-import Image from 'next/image';
+import Image from "next/image";
 
 import { useState, useEffect } from "react";
 
@@ -30,12 +30,13 @@ const ScrollToTopButton = () => {
 
   return (
     <button
+      aria-label="scroll-to-top-button"
       onClick={scrollToTop}
       className={`${
         isVisible ? "visible" : "invisible"
-      } fixed bottom-8 right-8 z-50 p-2 h-auto bg-zinc-950 text-white rounded-full shadow-md`}
+      } fixed bottom-8 right-8 z-30 p-2 h-auto bg-zinc-950 text-white rounded-full shadow-md`}
     >
-     <Image src={"/arrow-top.svg"} width={25} height={25} alt="arrow pointing to the top"/>
+      <Image src={"/arrow-top.svg"} width={25} height={25} alt="arrow pointing to the top" />
     </button>
   );
 };
