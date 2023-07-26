@@ -7,18 +7,13 @@ import Image from "next/image";
 
 import CheckoutForm from "@/components/CheckoutForm";
 import QuantitySelectionBtns from "@/components/QuantitySelectionBtns";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Checkout",
-  description: "Simple checkout page",
-};
 
 export default function Checkout() {
   const { cart } = useCartStore();
 
   return (
     <>
+
       {cart.length === 0 ? (
         <div className="flex flex-col items-center justify-center h-full font-medium ">
           <span>

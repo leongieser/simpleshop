@@ -1,6 +1,6 @@
 ### To run the project locally:
 
-Clone this repos and run
+Clone this repo and run
 
 ```bash
 npm run dev
@@ -12,4 +12,4 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-live version:
+live version: [https://simpleshop-ilap.vercel.app/](https://simpleshop-ilap.vercel.app/)
