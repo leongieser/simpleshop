@@ -1,13 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useCartStore } from '@/app/(store)/cart';
 
 export default function CheckoutSuccessModal({ checkoutSuccess }: { checkoutSuccess: boolean }) {
   const [countdown, setCountdown] = useState(5);
   const router = useRouter();
+  const {clearCart} = useCartStore();
 
   useEffect(() => {
     if (checkoutSuccess) {
+
       const timer = setInterval(() => {
         setCountdown((prevCount) => prevCount - 1);
       }, 1000);
@@ -20,7 +23,10 @@ export default function CheckoutSuccessModal({ checkoutSuccess }: { checkoutSucc
 
   useEffect(() => {
     if (checkoutSuccess && countdown === 0) {
+      clearCart()
       router.push("/products");
+
+
     }
   }, [countdown, checkoutSuccess]);
 

@@ -12,7 +12,6 @@ export default function CheckoutForm() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    clearCart();
     setCheckoutSuccess(true);
   };
 
