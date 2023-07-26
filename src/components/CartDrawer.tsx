@@ -88,7 +88,7 @@ export default function CartDrawer() {
                     Items: {cart.reduce((acc, curr) => acc + curr.quantity!, 0)}{" "}
                   </div>
                   <div className="font-semibold">
-                    Total:
+                    Total: 
                     {cart.reduce((acc, curr) => acc + curr.quantity! * curr.price, 0).toFixed(2)} €
                   </div>
                 </div>
