@@ -2,12 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types";
-import { useCartStore } from "@/app/(store)/cart";
 import QuantitySelectionBtns from "./QuantitySelectionBtns";
 
 export default function CartItem({ product }: { product: Product }) {
-  const { addToCart, removeFromCart } = useCartStore();
-
   return (
     <div
       key={product.id}

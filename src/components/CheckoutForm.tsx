@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 import CheckoutSuccessModal from "./CheckoutSuccessModal";
-import { useCartStore } from "@/app/(store)/cart";
 
 export default function CheckoutForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
-  const { clearCart } = useCartStore();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();

@@ -15,7 +15,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <section
-      aria-label="product-card"
+      aria-label={`product-card-${product.title}`}
       className="flex flex-col overflow-hidden bg-white border rounded-lg shadow-lg border-zinc-200"
     >
       <Link
@@ -30,7 +30,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
           className="absolute object-cover object-center w-full h-full transition duration-150 group-hover:scale-125 inset0"
         ></Image>
       </Link>
-      <section aria-label="product-details" className="flex flex-col p-4 felx-1 sm:p-6">
+      <div aria-label="product-details" className="flex flex-col p-4 felx-1 sm:p-6">
         <h2 className="mb-2 text-lg font-bold text-zinc-800">
           <Link
             className="transition duration-100 hover:text-emerald-600"
@@ -62,7 +62,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
           </div>
         </div>
         <div>In stock: {product.stock}</div>
-      </section>
+      </div>
       <button
         disabled={product.quantity! >= product.stock}
         onClick={handleAddToCart}
